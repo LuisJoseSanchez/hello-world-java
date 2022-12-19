@@ -25,5 +25,5 @@ jobs:
         username: aBW5BWCEMIGRATIONTASK
         password: uoRZcXAK8C3CBxU+97wSZTYjs8JPwmisrDw3X4kWng+ACRDrt2kh
     - run: |
-        docker build --tag acrappsteer01.azurecr.io/bookstoreapi:${{ github.sha }} .
-        docker push acrappsteer01.azurecr.io/bookstoreapi:${{ github.sha }}
+        docker build --tag bw5bwcemigrationtask.azurecr.io:${{ github.sha }} .
+        docker push bw5bwcemigrationtask.azurecr.io:${{ github.sha }}
