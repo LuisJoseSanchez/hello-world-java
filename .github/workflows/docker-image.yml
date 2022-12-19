@@ -7,16 +7,16 @@ on:
     branches: [ "master" ]
 
 jobs:
-
-  build:
-
+  build-container-image:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build --tag "docker-hello-world:latest" .
-
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@main
+      
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - name: 'Build and Push Image to ACR'
       uses: azure/docker-login@v1
@@ -25,4 +25,5 @@ jobs:
         username: acrappsteer01
         password: T0Y2upicKm+Nh0Ejy01ihBDhAgwuc2xq
     - run: |
-        docker push docker-hello-world:latest
+        docker build . -t acrappsteer01.azurecr.io/bookstoreapi:${{ github.sha }}
+        docker push acrappsteer01.azurecr.io/bookstoreapi:${{ github.sha }}
