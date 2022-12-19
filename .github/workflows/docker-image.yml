@@ -25,5 +25,5 @@ jobs:
         username: acrappsteer01
         password: T0Y2upicKm+Nh0Ejy01ihBDhAgwuc2xq
     - run: |
-        docker build . -t acrappsteer01.azurecr.io/bookstoreapi:${{ github.sha }}
+        docker build --tag acrappsteer01.azurecr.io/bookstoreapi:${{ github.sha }} .
         docker push acrappsteer01.azurecr.io/bookstoreapi:${{ github.sha }}
