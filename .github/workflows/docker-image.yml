@@ -25,5 +25,5 @@ jobs:
         username: aBW5BWCEMIGRATIONTASK
         password: uoRZcXAK8C3CBxU+97wSZTYjs8JPwmisrDw3X4kWng+ACRDrt2kh
     - run: |
-        docker build --tag bw5bwcemigrationtask.azurecr.io/bwce/raviemp1:${{ github.sha }} .
-        docker push bw5bwcemigrationtask.azurecr.io/bwce/raviemp1:${{ github.sha }}
+        docker build --tag bw5bwcemigrationtask.azurecr.io/demo:${{ github.sha }} .
+        docker push bw5bwcemigrationtask.azurecr.io/demo:${{ github.sha }}
