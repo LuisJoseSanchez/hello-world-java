@@ -22,8 +22,8 @@ jobs:
       uses: azure/docker-login@v1
       with:
         login-server: bw5bwcemigrationtask.azurecr.io
-        username: aBW5BWCEMIGRATIONTASK
-        password: uoRZcXAK8C3CBxU+97wSZTYjs8JPwmisrDw3X4kWng+ACRDrt2kh
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
     - run: |
         docker build --tag bw5bwcemigrationtask.azurecr.io/demo:${{ github.sha }} .
         docker push bw5bwcemigrationtask.azurecr.io/demo:${{ github.sha }}
