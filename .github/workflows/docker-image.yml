@@ -12,18 +12,9 @@ jobs:
     steps:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@main
-      
-    - name: 'Login via Azure CLI'
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+       run:docker login -u sanketbodake -p Sank@9721
+    - name: Build the docker image
+       run:docker build --tag sanketdemo/demo:${{ github.sha }} .
+    - name: Docker push
+       run:docker push sanketbodake/demorepo 
     
-    - name: 'Build and Push Image to ACR'
-      uses: azure/docker-login@v1
-      with:
-        login-server: bw5bwcemigrationtask.azurecr.io
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-    - run: |
-        docker build --tag bw5bwcemigrationtask.azurecr.io/demo:${{ github.sha }} .
-        docker push bw5bwcemigrationtask.azurecr.io/demo:${{ github.sha }}
