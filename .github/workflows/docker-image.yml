@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 'Checkout GitHub Action'
-      uses: actions/sanketbodake@v2
+      uses: actions/checkout@main
+    - name: Log in to Docker Hub
+      uses: docker/login-action@main
        run:docker login -u sanketbodake -p Sank@9721
     - name: Build the docker image
        run:docker build --tag sanketdemo/demo:${{ github.sha }} .
