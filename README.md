@@ -32,5 +32,4 @@ To execute the program, type this:
 java HelloWorld
 ```
 
-hello this line chnaged by palak""""""""""""""""
-not by palak its just practice tutorial;
+hello this line chnaged by palak""""""""""""""""";
