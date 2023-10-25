@@ -2,8 +2,8 @@ public class HelloWorld {
   public static void main(String[] args) {
 
 
-    System.out.println("Hi kavya");
-    System.out.println("Hi karthik");
+    System.out.println("Hi G.kavya");
+    System.out.println("Hi G.karthik");
   ;
 
   
